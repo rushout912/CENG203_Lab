@@ -69,6 +69,18 @@
     <ClCompile Include="Recursion\Recursion.cpp">
       <Filter>Recursion</Filter>
     </ClCompile>
+    <ClCompile Include="Labs\Week06.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\BST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\ExpressionTreecpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\TreeUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Labs\Labs.h">
@@ -103,6 +115,18 @@
     </ClInclude>
     <ClInclude Include="Recursion\Recursion.h">
       <Filter>Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\BST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\ExpressionTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\TreeNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\TreeUtils.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

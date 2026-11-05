@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Labs\Week04.cpp" />
     <ClCompile Include="Labs\Week05.cpp" />
+    <ClCompile Include="Labs\Week06.cpp" />
     <ClCompile Include="LinkedList\DoublyLinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Labs\Week02.cpp" />
@@ -152,6 +153,9 @@
     <ClCompile Include="Stack\ArrayStack.cpp" />
     <ClCompile Include="Queue\Queue.cpp" />
     <ClCompile Include="Queue\CircularQueue.cpp" />
+    <ClCompile Include="Tree\BST.cpp" />
+    <ClCompile Include="Tree\ExpressionTreecpp.cpp" />
+    <ClCompile Include="Tree\TreeUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Labs\Labs.h" />
@@ -165,6 +169,10 @@
     <ClInclude Include="Stack\ArrayStack.h" />
     <ClInclude Include="Queue\Queue.h" />
     <ClInclude Include="Queue\CircularQueue.h" />
+    <ClInclude Include="Tree\BST.h" />
+    <ClInclude Include="Tree\ExpressionTree.h" />
+    <ClInclude Include="Tree\TreeNode.h" />
+    <ClInclude Include="Tree\TreeUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
