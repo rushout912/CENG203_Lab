@@ -17,9 +17,19 @@ ExprNode* buildFromPostfix(const string& postfix)
     stringstream ss(postfix);
     string token;
     while (ss >> token) {           // one token at a time: "3", "4", "+"
-        // TODO: make a node; operator -> pop right, pop left; push it
+        ExprNode* node = new ExprNode;
+        node->data = token;
+        node->left = nullptr;
+        node->right = nullptr;
+        if (isOperator(token)) {
+            node->right = st.top(); // the LAST pushed operand is the right
+            st.pop();
+            node->left = st.top();  // the one before it is the left
+            st.pop();
+        }
+        st.push(node);              // operand or finished subtree
     }
-    return st.empty() ? nullptr : st.top();
+    return st.top();                // the last subtree is the whole tree
 }
 
 void printPrefix(const ExprNode* node)
@@ -43,12 +53,32 @@ void printPostfix(const ExprNode* node)
 // ============================ Q9 ============================
 void printInfix(const ExprNode* node)
 {
-    // TODO: "(" left " op " right ")" for operators, the number otherwise
+    if (node == nullptr)
+        return;
+    if (isOperator(node->data)) {   // parentheses around every operation
+        cout << "(";
+        printInfix(node->left);
+        cout << " " << node->data << " ";
+        printInfix(node->right);
+        cout << ")";
+    }
+    else {
+        cout << node->data;         // a number: just print it
+    }
 }
 
 double evaluate(const ExprNode* node)
 {
-    return 0.0;                     // TODO: number -> stod; else combine
+    if (!isOperator(node->data))    // base case: a number
+        return stod(node->data);
+    double lhs = evaluate(node->left);      // postorder: children first
+    double rhs = evaluate(node->right);
+    if (node->data == "+") return lhs + rhs;
+    if (node->data == "-") return lhs - rhs;
+    if (node->data == "*") return lhs * rhs;
+    if (rhs == 0.0)
+        throw runtime_error("Division by zero");
+    return lhs / rhs;
 }
 
 void destroyExpr(ExprNode* node)

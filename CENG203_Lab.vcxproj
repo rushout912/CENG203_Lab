@@ -154,7 +154,7 @@
     <ClCompile Include="Queue\Queue.cpp" />
     <ClCompile Include="Queue\CircularQueue.cpp" />
     <ClCompile Include="Tree\BST.cpp" />
-    <ClCompile Include="Tree\ExpressionTreecpp.cpp" />
+    <ClCompile Include="Tree\ExpressionTree.cpp" />
     <ClCompile Include="Tree\TreeUtils.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -75,10 +75,10 @@
     <ClCompile Include="Tree\BST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\ExpressionTreecpp.cpp">
+    <ClCompile Include="Tree\TreeUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\TreeUtils.cpp">
+    <ClCompile Include="Tree\ExpressionTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -119,13 +119,13 @@
     <ClInclude Include="Tree\BST.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tree\ExpressionTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Tree\TreeNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tree\TreeUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\ExpressionTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
