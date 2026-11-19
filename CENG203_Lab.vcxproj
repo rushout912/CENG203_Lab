@@ -139,9 +139,12 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Heap\MaxHeap.cpp" />
+    <ClCompile Include="Heap\PriorityQueue.cpp" />
     <ClCompile Include="Labs\Week04.cpp" />
     <ClCompile Include="Labs\Week05.cpp" />
     <ClCompile Include="Labs\Week06.cpp" />
+    <ClCompile Include="Labs\Week07.cpp" />
     <ClCompile Include="LinkedList\DoublyLinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Labs\Week02.cpp" />
@@ -158,6 +161,8 @@
     <ClCompile Include="Tree\TreeUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Heap\MaxHeap.h" />
+    <ClInclude Include="Heap\PriorityQueue.h" />
     <ClInclude Include="Labs\Labs.h" />
     <ClInclude Include="LinkedList\Node.h" />
     <ClInclude Include="LinkedList\LinkedList.h" />
