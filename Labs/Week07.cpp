@@ -9,8 +9,8 @@ using namespace std;
 
 // Q4 and Q6 are prediction questions: their blocks stay switched off
 // until your tables are filled in. Then change false to true.
-const bool SHOW_Q4 = false;
-const bool SHOW_Q6 = false;
+const bool SHOW_Q4 = true;
+const bool SHOW_Q6 = true;
 
 // Q1: prints an array and whether it obeys the max-heap rule
 void w7Check(const vector<int>& a)
@@ -87,16 +87,28 @@ void heapMenu()
 
         switch (choice) {
         case 1:
-            // TODO Q5: read a number, insert it, print its swaps
+            cout << "Number: ";
+            cin >> value;
+            before = heap.swaps();
+            heap.insert(value);
+            cout << value << " inserted, swaps = "
+                << heap.swaps() - before << endl;
             break;
         case 2:
-            // TODO Q5: removeMax - print the value or "Heap is empty!"
+            if (heap.removeMax(value))
+                cout << "Removed " << value << endl;
+            else
+                cout << "Heap is empty!" << endl;
             break;
         case 3:
-            // TODO Q5: printArray, new line, printTree
+            cout << "Array: ";
+            heap.printArray();
+            cout << endl;
+            heap.printTree();
             break;
         case 4:
-            // TODO Q5: clear the heap
+            heap.clear();
+            cout << "Heap cleared." << endl;
             break;
         case 0:
             break;

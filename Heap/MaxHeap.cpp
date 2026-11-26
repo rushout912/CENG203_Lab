@@ -12,52 +12,79 @@ MaxHeap::MaxHeap()
 // ============================ Q1 ============================
 int MaxHeap::parent(int i)
 {
-    return i;                       // TODO: the formula (i = placeholder)
+    return (i - 1) / 2;
 }
 
 int MaxHeap::leftChild(int i)
 {
-    return i;                       // TODO
+    return 2 * i + 1;
 }
 
 int MaxHeap::rightChild(int i)
 {
-    return i;                       // TODO
+    return 2 * i + 2;
 }
 
 bool MaxHeap::isMaxHeap(const vector<int>& a)
 {
-    return false;                   // TODO: every node <= its parent?
+    int n = (int)a.size();
+    for (int i = 1; i < n; i++)     // every node except the root
+        if (a[i] > a[parent(i)])
+            return false;           // a child is larger than its parent
+    return true;
 }
 
 // ============================ Q2 ============================
 void MaxHeap::insert(int value)
 {
-    // TODO: push_back the value, then bubbleUp from the last index
+    heap.push_back(value);          // step 1: the next free leaf
+    bubbleUp(size() - 1);           // step 2: repair the path to the root
 }
 
 void MaxHeap::bubbleUp(int index)
 {
-    // TODO: while not the root and larger than the parent:
-    //       swapNodes with the parent, continue from the parent
+    while (index > 0 && heap[index] > heap[parent(index)]) {
+        swapNodes(index, parent(index));
+        index = parent(index);      // follow the value one level up
+    }
 }
 
 // ============================ Q3 ============================
 bool MaxHeap::removeMax(int& value)
 {
-    return false;                   // TODO: root out, last leaf to the
-    //       root, bubbleDown(0)
+    if (heap.empty())
+        return false;
+    value = heap[0];                // the maximum is always the root
+    heap[0] = heap.back();          // step 1: last leaf replaces the root
+    heap.pop_back();
+    bubbleDown(0);                  // step 2: repair downwards
+    return true;
 }
 
 void MaxHeap::bubbleDown(int index)
 {
-    // TODO: find the largest of node, left child, right child;
-    //       if it is a child: swapNodes, continue from that child
+    int n = size();
+    while (true) {
+        int largest = index;
+        int left = leftChild(index);
+        int right = rightChild(index);
+        if (left < n && heap[left] > heap[largest])
+            largest = left;
+        if (right < n && heap[right] > heap[largest])
+            largest = right;
+        if (largest == index)
+            return;                 // both children are smaller: done
+        swapNodes(index, largest);
+        index = largest;            // follow the value one level down
+    }
 }
 
 bool MaxHeap::getMax(int& value) const
 {
-    return false;                   // TODO: copy the root, change nothing
+    if (heap.empty())
+        return false;
+    value = heap[0];
+    return true;
 }
 
 // ============================ given ============================

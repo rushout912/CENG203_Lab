@@ -13,14 +13,20 @@ PriorityQueue::PriorityQueue()
 // ============================ Q7 ============================
 int PriorityQueue::enqueue(int priority)
 {
-    return -1;                      // TODO: take the next ticket, build
-    //       the key, insert it
+    int ticket = nextTicket;
+    nextTicket++;
+    heap.insert(priority * MAX_TICKETS + (MAX_TICKETS - 1 - ticket));
+    return ticket;
 }
 
 bool PriorityQueue::dequeue(int& priority, int& ticket)
 {
-    return false;                   // TODO: remove the largest key,
-    //       split it into its two parts
+    int key = 0;
+    if (!heap.removeMax(key))
+        return false;               // nobody is waiting
+    priority = key / MAX_TICKETS;
+    ticket = MAX_TICKETS - 1 - key % MAX_TICKETS;
+    return true;
 }
 
 // ============================ given ============================
